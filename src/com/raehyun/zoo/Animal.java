@@ -1,20 +1,20 @@
 package com.raehyun.zoo;
 
+import java.util.Objects;
+
 public class Animal {
 
     // attributes
     private int age;
     private String name;
-    private String type;
     private int hp;
 
 
     // constructor
 
-    public Animal(int age, String name, String type) {
+    public Animal(int age, String name) {
         this.age = age;
         this.name = name;
-        this.type = type;
         this.hp = 50;
     }
 
@@ -25,10 +25,6 @@ public class Animal {
 
     public String getName() {
         return name;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public void setName(String name) {
@@ -48,5 +44,20 @@ public class Animal {
         }
     }
 
+    public void say() {
+        System.out.println("동물이 말합니다.");
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(name, animal.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
 }

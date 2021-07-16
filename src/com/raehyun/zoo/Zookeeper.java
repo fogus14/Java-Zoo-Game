@@ -18,7 +18,7 @@ public class Zookeeper {
             return false;
         }
         for (Animal managedAnimal : this.managedAnimals) {
-            if (managedAnimal == animal) {
+            if (animal.equals(managedAnimal)) {
                 System.out.println("중복된 동물입니다.");
                 return false;
             }
