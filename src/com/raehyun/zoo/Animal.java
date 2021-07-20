@@ -2,16 +2,14 @@ package com.raehyun.zoo;
 
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
 
     // attributes
     private int age;
     private String name;
     private int hp;
 
-
     // constructor
-
     public Animal(int age, String name) {
         this.age = age;
         this.name = name;
@@ -44,9 +42,7 @@ public class Animal {
         }
     }
 
-    public void say() {
-        System.out.println("동물이 말합니다.");
-    }
+    public abstract void say();
 
     @Override
     public boolean equals(Object o) {
